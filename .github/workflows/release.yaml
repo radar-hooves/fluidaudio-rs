@@ -15,7 +15,7 @@ jobs:
   publish:
     name: Publish to crates.io
     # by-exception (2026-07-03): needs macOS toolchain — Rust/Swift package requires Apple SDK; cross-compilation not viable on the household runner
-    runs-on: macos-14
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
@@ -40,7 +40,7 @@ jobs:
         run: cargo publish
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3 # v3
         with:
           generate_release_notes: true
         env:
